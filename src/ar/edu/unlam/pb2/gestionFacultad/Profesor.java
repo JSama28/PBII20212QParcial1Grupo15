@@ -23,6 +23,4 @@ public class Profesor extends Empleado {
 		this.departamentos = departamentos;
 	}
 	
-	
-	
 }

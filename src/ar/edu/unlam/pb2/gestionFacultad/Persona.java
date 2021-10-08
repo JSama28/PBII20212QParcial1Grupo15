@@ -4,19 +4,27 @@ public class Persona {
 	private String nombrePersona;
 	private String apellido;
 	private Integer id;
-	private Boolean estadoCivil= false;
+	private String estadoCivil;
 	
-	public Persona(){
-		
+	public Persona(String nombrePersona, String apellido, Integer id, String estadoCivil) {
+		this.nombrePersona = nombrePersona;
+		this.apellido = apellido;
+		this.id = id;
+		this.estadoCivil = estadoCivil;
 	}
 	
-	public Boolean cambiarEstadoCivil() {
-		return false;
+	public void cambiarEstadoCivil(Integer identificador,String nuevoEstado){
+		if(id.equals(identificador)) {
+			this.estadoCivil=nuevoEstado;
+		}		
 	}
 	
-	public void mostarDatos() {}
+	@Override
+	public String toString() {
+		return "Persona [nombrePersona=" + getNombrePersona() + ", apellido=" + getApellido() + ", id=" +getId() + ", estadoCivil="
+				+ getEstadoCivil()+ "]";
+	}
 
-	
 	public String getNombrePersona() {
 		return nombrePersona;
 	}
@@ -41,15 +49,12 @@ public class Persona {
 		this.id = id;
 	}
 
-	public Boolean getEstadoCivil() {
+	public String getEstadoCivil() {
 		return estadoCivil;
 	}
 
-	public void setEstadoCivil(Boolean estadoCivil) {
+	public void setEstadoCivil(String estadoCivil) {
 		this.estadoCivil = estadoCivil;
 	}
-	
-	
-	
 
 }

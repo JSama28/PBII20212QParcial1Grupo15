@@ -4,51 +4,44 @@ import java.util.Arrays;
 
 public class Estudiante extends Persona {
 	private Curso[]cursos;
-	private Integer cantidadDeMateriasPorAlumno=10;
+	private Facultad facultad;
+	private Integer cantidadDeMateriasPorAlumno=9;
 	private Integer cantidadDeMateriasInscriptas;
-
-	public Estudiante(String nombrePersona, String apellido, Integer id, String estadoCivil) {
-		super(nombrePersona, apellido, id, estadoCivil);
+	private static int cantidadEstudiantes=0;
+	
+	public Estudiante(String nombrePersona, String apellido, Integer dni, String estadoCivil) {
+		super(nombrePersona, apellido, dni, estadoCivil);
 		this.cursos=new Curso[cantidadDeMateriasPorAlumno];
 		this.cantidadDeMateriasInscriptas=0;
+		cantidadEstudiantes++;
 	}
 
-/*  Estoy terminando este metodo porque me tira error
-	public void registrarACurso(Curso nuevoCurso) {
-		//cursos[cantidadDeMateriasInscriptas++] = nuevoCurso;
-		System.out.println(""+nuevoCurso);
-		for (int i = 0; i < cantidadDeMateriasInscriptas; i++) {
-				cursos[i] = nuevoCurso;
-				cantidadDeMateriasInscriptas++;
-				
-			}
-	
-	}
-	
-	public Curso[] obtenerListadoDeCursosInscriptos(String programacion) {
-		Curso resultado[] = new Curso[cantidadDeMateriasPorAlumno];
-		Integer cantidadDeCursosAgregadasAlListado= 0;
-
-		for (int i = 0; i < cantidadDeMateriasInscriptas; i++) {
-			if (cursos[i].getNombreCurso().equals(programacion)) {
-				resultado[cantidadDeCursosAgregadasAlListado++] = cursos[i];
-			}
+	/*revisar*/
+	public void registrarseACurso(Integer dni, Curso nuevoCurso) {
+		for (int i = 0; i <cursos.length; i++) {
+			for(int j=0;j<facultad.getCantidadDeCursos();j++) {
+			    if(this.cursos[i] != null) {
+			      if(facultad.getCursos().equals(nuevoCurso)) {
+			         if(super.getDni().equals(dni)) {
+				this.cursos[i] = nuevoCurso;
+				return;
+			         
+			  }
+		   }
 		}
-		return resultado;
-	}*/
-		
+	  }
+	}
+  }		
 
 	@Override
-	public void cambiarEstadoCivil(Integer identificador,String nuevoEstado){
-		super.cambiarEstadoCivil(identificador, nuevoEstado);
+	public void cambiarEstadoCivil(Integer dni,String nuevoEstado){
+		super.cambiarEstadoCivil(dni, nuevoEstado);
 				
 	}
 
 	@Override
-	public String toString() {
-		return "Estudiante [cursos=" + Arrays.toString(cursos) + ", NombrePersona=" + super.getNombrePersona()
-				+ ", Apellido=" + super.getApellido() + ", Id=" + super.getId() + ", EstadoCivil=" + super.getEstadoCivil()
-				+ "]";
+	public String MostarInformacion(){ 
+		return "Nombre=" + super.getNombre()+ ", Apellido=" + super.getApellido() + ", Dni=" + super.getDni() + ", Estado_Civil=" + super.getEstadoCivil();
 	}
 
 	public Curso[] getCursos() {
@@ -57,6 +50,10 @@ public class Estudiante extends Persona {
 
 	public void setCursos(Curso[] cursos) {
 		this.cursos = cursos;
+	}
+	
+	public static int getCantidadEstudiantes() {
+		return cantidadEstudiantes;
 	}
 	
 	

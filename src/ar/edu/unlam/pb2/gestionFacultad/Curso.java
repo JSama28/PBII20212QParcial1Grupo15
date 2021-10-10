@@ -1,18 +1,24 @@
 package ar.edu.unlam.pb2.gestionFacultad;
 
 public class Curso {
-  private String nombreCurso;
+	private String nombreCurso;
+	private static int cantidadCurso = 0;
 
-  public Curso() {
-
-  }
-
-  public String getNombreCurso() {
-	return nombreCurso;
+	public Curso(String nombreCurso) {
+		this.nombreCurso = nombreCurso;
+		this.cantidadCurso++;
 	}
 
-  public void setNombreCurso(String nombreCurso) {
-	this.nombreCurso = nombreCurso;
+	public String getNombreCurso() {
+		return nombreCurso;
 	}
-  
+
+	public void setNombreCurso(String nombreCurso) {
+		this.nombreCurso = nombreCurso;
+	}
+
+	public static int getCantidadCurso() {
+		return cantidadCurso;
+	}
+
 }

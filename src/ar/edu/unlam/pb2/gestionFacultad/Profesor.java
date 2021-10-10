@@ -3,45 +3,41 @@ package ar.edu.unlam.pb2.gestionFacultad;
 import java.util.Arrays;
 
 public class Profesor extends Empleado {
-	private Departamento[] departamentos;
-	private static int cantidadProfesor=0;
+	private Departamento departamentos;
+	private static int cantidadProfesores=0;
+	
 
-	public Profesor(String nombrePersona, String apellido, Integer id, String estadoCivil, Integer anioIngreso,
-			Integer nro_despacho,Integer legajo) {
-		super(nombrePersona, apellido, id, estadoCivil, anioIngreso, nro_despacho,legajo);
-		this.departamentos = new Departamento[Departamento.getCantidadDepartamento()];
-		this.cantidadProfesor++;
-	}
-
-	@Override
-	public void resignarNuevoDespacho(Integer legajo,Integer nuevoDespacho){
-		super.resignarNuevoDespacho(legajo, nuevoDespacho);	
+	public Profesor(String nombre, String apellido, Integer dni, String estadoCivil, Integer anioIngreso,
+			Integer nro_despacho,Departamento despartamentos) {
+		super(nombre, apellido, dni, estadoCivil, anioIngreso, nro_despacho);
+		this.departamentos =departamentos;
+		this.cantidadProfesores++;
 	}
 	
 	@Override
-	public void cambiarEstadoCivil(Integer identificador,String nuevoEstado){
-		super.cambiarEstadoCivil(identificador, nuevoEstado);
+	public void cambiarEstadoCivil(Integer dni,String nuevoEstado){
+		super.cambiarEstadoCivil(dni, nuevoEstado);
 				
 	}
 	
 	@Override
-	public String toString() {
-		return "Profesor [departamentos=" + Arrays.toString(departamentos) + ", AnioIngreso=" + super.getAnioIngreso()
-				+ ", Nro_despacho=" + super.getNro_despacho() + ", legajo=" + super.getLegajo() + ", Nombre=" + super.getNombrePersona()
-				+ ", Apellido=" + super.getApellido() + ", Id=" + super.getId() + ", EstadoCivil=" + super.getEstadoCivil()
-				+ "]";
+	public String MostarInformacion(){
+		return "Nombre=" + super.getNombre()+ ", Apellido=" + super.getApellido() + ", Dni=" + super.getDni()+ ", Estado_Civil=" + super.getEstadoCivil()+", Año_Ingreso=" + super.getAnioIngreso()
+				+ ", Numero_Despacho=" + super.getNro_despacho()+", Departamento=" +getDepartamentos();
 	}
 
-	public Departamento[] getDepartamentos() {
+	public Departamento getDepartamentos() {
 		return departamentos;
 	}
 
-	public void setDepartamentos(Departamento[] departamentos) {
+
+	public void setDepartamentos(Departamento departamentos) {
 		this.departamentos = departamentos;
 	}
 
-	public static int getCantidadProfesor() {
-		return cantidadProfesor;
+
+	public static int getCantidadProfesores() {
+		return cantidadProfesores;
 	}
 	
 }

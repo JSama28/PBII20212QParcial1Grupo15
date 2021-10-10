@@ -3,40 +3,45 @@ package ar.edu.unlam.pb2.gestionFacultad;
 import java.util.Arrays;
 
 public class Personal extends Empleado {
-	private Seccion[] secciones;
+	private Seccion secciones;
+	private static int cantidadPersonales=0;
 
-	public Personal(String nombrePersona, String apellido, Integer id, String estadoCivil, Integer anioIngreso,
-			Integer nro_despacho,Integer legajo, Seccion[] secciones) {
-		super(nombrePersona, apellido, id, estadoCivil, anioIngreso, nro_despacho,legajo);
-		this.secciones=new Seccion[Seccion.getCantidadSeccion()];
-	}
+	public Personal(String nombre, String apellido, Integer dni, String estadoCivil, Integer anioIngreso,
+			Integer nro_despacho, Seccion secciones) {
+			super(nombre, apellido, dni, estadoCivil, anioIngreso, nro_despacho);
+			this.secciones=secciones;
+			cantidadPersonales++;
+		}
 	
-	@Override
-	public void resignarNuevoDespacho(Integer legajo,Integer nuevoDespacho){
-		super.resignarNuevoDespacho(legajo, nuevoDespacho);	
-	}
 
 	@Override
-	public void cambiarEstadoCivil(Integer identificador,String nuevoEstado){
-		super.cambiarEstadoCivil(identificador, nuevoEstado);
+	public void cambiarEstadoCivil(Integer dni,String nuevoEstado){
+		super.cambiarEstadoCivil(dni, nuevoEstado);
 				
 	}
 	
 	@Override
-	public String toString() {
-		return "Personal [secciones=" + Arrays.toString(secciones) + ", AnioIngreso=" + super.getAnioIngreso()
-				+ ", Nro_despacho()=" + super.getNro_despacho() + ", Legajo=" + super.getLegajo() + ", Nombre="
-				+ super.getNombrePersona() + ", Apellido=" + super.getApellido() + ", Id()=" + super.getId()
-				+ ", EstadoCivil=" + super.getEstadoCivil() + "]";
+	public String MostarInformacion() {
+		return "Nombre=" + super.getNombre()+ ", Apellido=" + super.getApellido() + ", Dni=" + super.getDni() + ", Estado_Civil=" + super.getEstadoCivil()+ ", Año_Ingreso=" + super.getAnioIngreso() +", Numero_Despacho=" + super.getNro_despacho()+",Seccion=" +getSecciones();
 	}
 
-	public Seccion[] getSecciones() {
+
+	public Seccion getSecciones() {
 		return secciones;
 	}
 
-	public void setSecciones(Seccion[] secciones) {
+
+	public void setSecciones(Seccion secciones) {
 		this.secciones = secciones;
 	}
+
+
+	public static int getCantidadPersonales() {
+		return cantidadPersonales;
+	}
+
+
+
 	
 	
 	

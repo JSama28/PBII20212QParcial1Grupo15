@@ -220,15 +220,7 @@ public class InterfazMenu {
 		}while(valorIngresado=="");
 		nro_Despacho = Integer.parseInt(valorIngresado);
 		
-		do {
-			System.out.println("Ingrese nombre de departamento:");
-			valorIngresado = teclado.next();
-		}while(valorIngresado=="");
-		departamentos=valorIngresado;
-		
-		Departamento dptos=new Departamento("departamentos");
-		
-		nuevoProfesor = new Profesor(nombre, apellido, dni, estadoCivil, anioIngreso,nro_Despacho,dptos);
+		nuevoProfesor = new Profesor(nombre, apellido, dni, estadoCivil, anioIngreso,nro_Despacho);
 		
 	        facultad.DarAltaProfesor(nuevoProfesor);
 

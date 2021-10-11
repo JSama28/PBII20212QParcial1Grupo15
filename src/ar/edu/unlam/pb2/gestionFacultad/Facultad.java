@@ -93,7 +93,6 @@ public class Facultad {
 			}
 		}
 	}
-
 	
 public Estudiante[] obtenerListadoDeEstudiantesDeUnaFacultad() {
 		Estudiante resultado[] = new Estudiante [estudiantes.length];
@@ -166,7 +165,7 @@ public void mostrarInformacionDeProfesoresDentroLaFacultad() {
 	
     for(int i=0;i<profesores.length;i++) {
     	if(profesores[i]!=null) {
-    	System.out.println("Profesor: "+ profesores[i].MostarInformacion());
+    	System.out.println("Profesor: "+ profesores[i].mostrarInformacion());
     	}
     }
 
@@ -177,7 +176,7 @@ public void mostrarInformacionEstudiantesDentroLaFacultad() {
 	
     for(int i=0;i<estudiantes.length;i++) {
     	if(estudiantes[i]!=null) {
-    	System.out.println("EStudiante: "+ estudiantes[i].MostarInformacion());
+    	System.out.println("EStudiante: "+ estudiantes[i].mostrarInformacion());
     	}
     }
 
@@ -188,7 +187,7 @@ public void mostrarInformacionPersonalDentroLaFacultad() {
 	
     for(int i=0;i<personalDeServicios.length;i++) {
     	if(personalDeServicios[i]!=null) {
-    	System.out.println("personalDeServicios: "+ personalDeServicios[i].MostarInformacion());
+    	System.out.println("personalDeServicios: "+ personalDeServicios[i].mostrarInformacion());
     	}
     }
 
@@ -264,6 +263,5 @@ public Estudiante[] getEstudiantes() {
 	public void setCantidadDePersonalDeServicio(Integer cantidadDePersonalDeServicio) {
 		this.cantidadDePersonalDeServicio = cantidadDePersonalDeServicio;
 	}
-
 
 }

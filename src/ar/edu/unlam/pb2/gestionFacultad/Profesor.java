@@ -6,10 +6,11 @@ public class Profesor extends Empleado {
 	
 
 	public Profesor(String nombre, String apellido, Integer dni, String estadoCivil, Integer anioIngreso,
-			Integer nroDespacho,Departamento despartamentos) {
+			Integer nroDespacho) {
 		super(nombre, apellido, dni, estadoCivil, anioIngreso, nroDespacho);
 		this.departamentos =departamentos;
 		this.cantidadProfesores++;
+
 	}
 	
 
@@ -20,11 +21,10 @@ public class Profesor extends Empleado {
 	}
 	
 	@Override
-	public String MostarInformacion(){
+	public String mostrarInformacion(){
 		return "Nombre=" + super.getNombre()+ ", Apellido=" + super.getApellido() + ", Dni=" + super.getDni()+ ", Estado_Civil=" + super.getEstadoCivil()+", Año_Ingreso=" + super.getAnioIngreso()
-				+ ", Numero_Despacho=" + super.getNroDespacho()+", Departamento=" +getDepartamentos();
+				+ ", Numero_Despacho=" + super.getNroDespacho();
 	}
-
 
 	public Departamento getDepartamentos() {
 		return departamentos;
@@ -40,6 +40,4 @@ public class Profesor extends Empleado {
 		return cantidadProfesores;
 	}
 
-	
-	
 }

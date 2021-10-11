@@ -19,7 +19,7 @@ public class Persona {
 		}	
 	}
 	
-	public String MostarInformacion() {
+	public String mostrarInformacion() {
 		return "Nombre=" + getNombre() + ", Apellido=" + getApellido() + ", Dni=" +getDni() + ", Estado_Civil="+ getEstadoCivil();
 	}
 
@@ -43,6 +43,7 @@ public class Persona {
 		return dni;
 	}
 
+
 	public void setDni(Integer dni) {
 		this.dni = dni;
 	}
@@ -54,10 +55,5 @@ public class Persona {
 	public void setEstadoCivil(String estadoCivil) {
 		this.estadoCivil = estadoCivil;
 	}
-	
-	
-	
-	
-	
 
 }

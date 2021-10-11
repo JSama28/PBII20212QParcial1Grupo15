@@ -19,7 +19,7 @@ public class Empleado extends Persona {
 	}
 		
 	@Override
-	public String MostarInformacion(){
+	public String mostrarInformacion(){
 		return "Nombre= "+ super.getNombre() + ", Apellido=" + super.getApellido() + ", Dni= " + super.getDni()
 	    + ",Estado_Civil= " + super.getEstadoCivil()+", Año_Ingreso= " + getAnioIngreso() + ", Numero_Despacho= " + getNroDespacho();
 	}
@@ -36,12 +36,10 @@ public class Empleado extends Persona {
 		return nroDespacho;
 	}
 
+
 	public void setNroDespacho(Integer nroDespacho) {
 		this.nroDespacho= nroDespacho;
 	}
-	
-	
-	
 	
 
 }

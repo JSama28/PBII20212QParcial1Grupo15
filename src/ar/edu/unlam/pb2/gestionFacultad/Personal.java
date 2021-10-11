@@ -20,7 +20,7 @@ public class Personal extends Empleado {
 	
 	@Override
 	public String mostrarInformacion() {
-		return "Nombre=" + super.getNombre()+ ", Apellido=" + super.getApellido() + ", Dni=" + super.getDni() + ", Estado_Civil=" + super.getEstadoCivil()+ ", Año_Ingreso=" + super.getAnioIngreso() +", Numero_Despacho=" + super.getNroDespacho()+",Seccion=" +getSecciones() ;
+		return "\nNombre: " + super.getNombre()+ "\nApellido: " + super.getApellido() + "\nDni: " + super.getDni() + "\nEstado_Civil: " + super.getEstadoCivil()+ "\nAnio_Ingreso: " + super.getAnioIngreso() +"\nNumero_Despacho: " + super.getNroDespacho()+"\nSeccion: " + getSecciones().getNombreSeccion() + "\n";
 	}
 
 	public Seccion getSecciones() {

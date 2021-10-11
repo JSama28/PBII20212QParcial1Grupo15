@@ -14,11 +14,6 @@ public class Estudiante extends Persona {
 		 cursos.add(nuevoCurso);
 	}		
 
-	@Override
-	public String mostrarInformacion(){ 
-		return "Nombre=" + super.getNombre()+ ", Apellido=" + super.getApellido() + ", Dni=" + super.getDni() + ", Estado_Civil=" + super.getEstadoCivil();
-	}
-
 	public ArrayList<Curso> getCursos() {
 		return cursos;
 	}

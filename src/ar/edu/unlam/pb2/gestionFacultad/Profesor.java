@@ -8,9 +8,7 @@ public class Profesor extends Empleado {
 	public Profesor(String nombre, String apellido, Integer dni, String estadoCivil, Integer anioIngreso,
 			Integer nroDespacho) {
 		super(nombre, apellido, dni, estadoCivil, anioIngreso, nroDespacho);
-		this.departamentos =departamentos;
-		this.cantidadProfesores++;
-
+		cantidadProfesores++;
 	}
 	
 
@@ -22,8 +20,7 @@ public class Profesor extends Empleado {
 	
 	@Override
 	public String mostrarInformacion(){
-		return "Nombre=" + super.getNombre()+ ", Apellido=" + super.getApellido() + ", Dni=" + super.getDni()+ ", Estado_Civil=" + super.getEstadoCivil()+", Año_Ingreso=" + super.getAnioIngreso()
-				+ ", Numero_Despacho=" + super.getNroDespacho();
+		return super.mostrarInformacion() + "\nDepartamento: " + getDepartamentos().getNombreDepartamento();
 	}
 
 	public Departamento getDepartamentos() {

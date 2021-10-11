@@ -176,7 +176,7 @@ public void mostrarInformacionEstudiantesDentroLaFacultad() {
 	
     for(int i=0;i<estudiantes.length;i++) {
     	if(estudiantes[i]!=null) {
-    	System.out.println("EStudiante: "+ estudiantes[i].mostrarInformacion());
+    	System.out.println("Estudiante: "+ estudiantes[i].mostrarInformacion());
     	}
     }
 

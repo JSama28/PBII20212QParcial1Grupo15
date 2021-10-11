@@ -20,8 +20,7 @@ public class Empleado extends Persona {
 		
 	@Override
 	public String mostrarInformacion(){
-		return "Nombre= "+ super.getNombre() + ", Apellido=" + super.getApellido() + ", Dni= " + super.getDni()
-	    + ",Estado_Civil= " + super.getEstadoCivil()+", Año_Ingreso= " + getAnioIngreso() + ", Numero_Despacho= " + getNroDespacho();
+		return super.mostrarInformacion() + "\nAnio_Ingreso: " + getAnioIngreso() + "\nNumero_Despacho: " + getNroDespacho();
 	}
 
 	public Integer getAnioIngreso() {

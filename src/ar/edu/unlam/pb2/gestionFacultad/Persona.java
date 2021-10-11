@@ -20,7 +20,7 @@ public class Persona {
 	}
 	
 	public String mostrarInformacion() {
-		return "Nombre=" + getNombre() + ", Apellido=" + getApellido() + ", Dni=" +getDni() + ", Estado_Civil="+ getEstadoCivil();
+		return "\nNombre: " + getNombre() + "\nApellido: " + getApellido() + "\nDni: " + getDni() + "\nEstado_Civil: "+ getEstadoCivil();
 	}
 
 	public String getNombre() {

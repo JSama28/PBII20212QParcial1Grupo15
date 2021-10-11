@@ -4,25 +4,16 @@ public class Empleado extends Persona {
 	private Integer anioIngreso;
 	private Integer nro_despacho;
 		
-	public Empleado(String nombre, String apellido, Integer dni, String estadoCivil, Integer anioIngreso,
-			  Integer nro_despacho) {
-			super(nombre, apellido, dni, estadoCivil);
-			this.anioIngreso = anioIngreso;
-			this.nro_despacho = nro_despacho;
-		
-		}
-	
-	
-	@Override//cambio el estado civil de un empleado
-	public void cambiarEstadoCivil(Integer dni,String nuevoEstado){
-		super.cambiarEstadoCivil(dni, nuevoEstado);
-				
+	public Empleado(String nombre, String apellido, Integer dni, String estadoCivil, Integer anioIngreso, Integer nro_despacho) {
+		super(nombre, apellido, dni, estadoCivil);
+		this.anioIngreso = anioIngreso;
+		this.nro_despacho = nro_despacho;		
 	}
 		
 	@Override//muestro los datos del objeto
-	public String MostarInformacion(){
+	public String mostrarInformacion(){
 		return "Nombre= "+ super.getNombre() + ", Apellido=" + super.getApellido() + ", Dni= " + super.getDni()
-	    + ",Estado_Civil= " + super.getEstadoCivil()+", Año_Ingreso= " + getAnioIngreso() + ", Numero_Despacho= " + getNro_despacho();
+	    + ",Estado_Civil= " + super.getEstadoCivil()+", Aï¿½o_Ingreso= " + getAnioIngreso() + ", Numero_Despacho= " + getNro_despacho();
 	}
    
 	
@@ -40,13 +31,6 @@ public class Empleado extends Persona {
 
 	public void setNro_despacho(Integer nro_despacho) {
 		this.nro_despacho = nro_despacho;
-	}
-
-	
-	
-	
-	
-	
-	
+	}	
 
 }

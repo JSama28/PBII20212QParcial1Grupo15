@@ -4,10 +4,8 @@ public class Seccion {
  
 	private String nombreSeccion;
 	
-
 	public Seccion(String nombreSeccion) {
-		this.nombreSeccion = nombreSeccion;
-		
+		this.nombreSeccion = nombreSeccion;	
 	}
 
 	public String getNombreSeccion() {
@@ -18,8 +16,4 @@ public class Seccion {
 		this.nombreSeccion = nombreSeccion;
 	}
 	
-	
-	
-	
-
 }

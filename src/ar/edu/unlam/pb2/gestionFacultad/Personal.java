@@ -1,48 +1,24 @@
 package ar.edu.unlam.pb2.gestionFacultad;
 
-import java.util.Arrays;
-
 public class Personal extends Empleado {
-	private Seccion secciones;
-	private static int cantidadPersonales=0;
+	private Seccion seccion;
 
-	public Personal(String nombre, String apellido, Integer dni, String estadoCivil, Integer anioIngreso,
-			Integer nro_despacho, Seccion secciones) {
-			super(nombre, apellido, dni, estadoCivil, anioIngreso, nro_despacho);
-			this.secciones=secciones;
-			cantidadPersonales++;
-		}
-	
-
-	@Override
-	public void cambiarEstadoCivil(Integer dni,String nuevoEstado){
-		super.cambiarEstadoCivil(dni, nuevoEstado);
-				
+	public Personal(String nombre, String apellido, Integer dni, String estadoCivil, Integer anioIngreso, Integer nro_despacho, Seccion seccion) {
+		super(nombre, apellido, dni, estadoCivil, anioIngreso, nro_despacho);
+		this.seccion=seccion;
 	}
 	
 	@Override
-	public String MostarInformacion() {
-		return "Nombre=" + super.getNombre()+ ", Apellido=" + super.getApellido() + ", Dni=" + super.getDni() + ", Estado_Civil=" + super.getEstadoCivil()+ ", Año_Ingreso=" + super.getAnioIngreso() +", Numero_Despacho=" + super.getNro_despacho()+",Seccion=" +getSecciones();
+	public String mostrarInformacion() {
+		return "Nombre=" + super.getNombre()+ ", Apellido=" + super.getApellido() + ", Dni=" + super.getDni() + ", Estado_Civil=" + super.getEstadoCivil()+ ", Aï¿½o_Ingreso=" + super.getAnioIngreso() +", Numero_Despacho=" + super.getNro_despacho()+",Seccion=" +getSeccion();
 	}
 
-
-	public Seccion getSecciones() {
-		return secciones;
+	public Seccion getSeccion() {
+		return seccion;
 	}
 
-
-	public void setSecciones(Seccion secciones) {
-		this.secciones = secciones;
+	public void setSeccion(Seccion seccion) {
+		this.seccion = seccion;
 	}
-
-
-	public static int getCantidadPersonales() {
-		return cantidadPersonales;
-	}
-
-
-
-	
-	
 	
 }

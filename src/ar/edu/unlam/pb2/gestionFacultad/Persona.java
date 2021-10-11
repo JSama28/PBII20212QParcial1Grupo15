@@ -7,19 +7,19 @@ public class Persona {
 	private String estadoCivil;
 	
 	public Persona(String nombrePersona, String apellido, Integer dni, String estadoCivil) {
-		this.nombre = nombre;
+		this.nombre = nombrePersona;
 		this.apellido = apellido;
 		this.dni = dni;
 		this.estadoCivil = estadoCivil;
 	}
 	
 	public void cambiarEstadoCivil(Integer dni,String nuevoEstado){
-		if(this.dni==dni) {
+		if(this.dni.equals(dni)) {
 			this.estadoCivil=nuevoEstado;
 		}	
 	}
 	
-	public String MostarInformacion() {
+	public String mostrarInformacion() {
 		return "Nombre=" + getNombre() + ", Apellido=" + getApellido() + ", Dni=" +getDni() + ", Estado_Civil="+ getEstadoCivil();
 	}
 

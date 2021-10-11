@@ -107,7 +107,7 @@ public class Facultad {
 	public void cambioDeLugarDeTrabajo(Integer dni, Departamento nuevoDepartamento) {
 		for(int i=0;i<profesores.length;i++) {
 		  if(profesores[i].getDni().equals(dni)) {
-			 profesores[i].setDepartamentos(nuevoDepartamento);
+			 profesores[i].setDepartamento(nuevoDepartamento);
 		  }
 		}	
 	  }
@@ -116,7 +116,7 @@ public class Facultad {
 	public void cambiarDeLugarUnPersonalDeServicio(Integer dni,Seccion nuevaSeccion) {
 		for(int i=0;i<personalDeServicios.length;i++) {
 			  if(personalDeServicios[i].getDni().equals(dni)) {
-				  personalDeServicios[i].setSecciones(nuevaSeccion);
+				  personalDeServicios[i].setSeccion(nuevaSeccion);
 		  }
 		}
 	  }

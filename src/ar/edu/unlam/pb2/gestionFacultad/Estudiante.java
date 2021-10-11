@@ -1,29 +1,59 @@
 package ar.edu.unlam.pb2.gestionFacultad;
 
 public class Estudiante extends Persona {
-	private Curso cursos;
+	private Curso[]cursosInscriptos;
+	private Facultad facultad;
+	private Integer cantidadDeMateriasPorAlumno=9;
+	private Integer cantidadDeMateriasInscriptas;
+	private static int cantidadEstudiantes=0;
 
-	public Estudiante() {
-		super();
+	public Estudiante(String nombre, String apellido, Integer dni, String estadoCivil) {
+		super(nombre, apellido, dni, estadoCivil);
+		this.cursosInscriptos=new Curso[cantidadDeMateriasPorAlumno];
+		this.cantidadDeMateriasInscriptas=0;
+		cantidadEstudiantes++;
 	}
-	
-	public void inscribirseACurso() {}
-	
+
+	/*revisar*/
+	public void registrarseACurso(Integer dni, Curso nuevoCurso) {
+		for (int i = 0; i <cursosInscriptos.length; i++) {
+			for(int j=0;j<facultad.getCantidadDeCursos();j++) {
+			    if(this.cursosInscriptos[i] != null) {
+			      if(facultad.getCursos().equals(nuevoCurso)) {
+			         if(super.getDni().equals(dni)) {
+				this.cursosInscriptos[i] = nuevoCurso;
+				return;
+			         
+			  }
+		   }
+		}
+	  }
+	}
+  }		
+
 	@Override
-	public Boolean cambiarEstadoCivil() {
-		return false;
+	public void cambiarEstadoCivil(Integer dni,String nuevoEstado){
+		super.cambiarEstadoCivil(dni, nuevoEstado);
+				
 	}
-	
+
 	@Override
-	public void mostarDatos() {}
-
-	
-	public Curso getCursos() {
-		return cursos;
+	public String MostarInformacion(){ 
+		return "Nombre=" + super.getNombre()+ ", Apellido=" + super.getApellido() + ", Dni=" + super.getDni() + ", Estado_Civil=" + super.getEstadoCivil();
 	}
 
-	public void setCursos(Curso cursos) {
-		this.cursos = cursos;
+
+	public Curso[] getCursos() {
+		return cursosInscriptos;
+	}
+
+	public void setCursos(Curso[] cursosInscriptos) {
+		this.cursosInscriptos = cursosInscriptos;
+	}
+	
+
+	public static int getCantidadEstudiantes() {
+		return cantidadEstudiantes;
 	}
 	
 	

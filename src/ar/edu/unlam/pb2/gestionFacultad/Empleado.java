@@ -2,23 +2,28 @@ package ar.edu.unlam.pb2.gestionFacultad;
 
 public class Empleado extends Persona {
 	private Integer anioIngreso;
-	private Integer nro_despacho;
+	private Integer nroDespacho;
 	
-	public Empleado() {
-		super();
+	public Empleado(String nombre, String apellido, Integer dni, String estadoCivil, Integer anioIngreso,
+			Integer nroDespacho) {
+		super(nombre, apellido, dni, estadoCivil);
+		this.anioIngreso = anioIngreso;
+		this.nroDespacho = nroDespacho;
 	}
-	
-	public void resignarDespacho() {}
-	
+
+			
 	@Override
-	public Boolean cambiarEstadoCivil() {
-		return false;
+	public void cambiarEstadoCivil(Integer dni,String nuevoEstado){
+		super.cambiarEstadoCivil(dni, nuevoEstado);
+				
 	}
-	
+		
 	@Override
-	public void mostarDatos() {}
-   
-	
+	public String MostarInformacion(){
+		return "Nombre= "+ super.getNombre() + ", Apellido=" + super.getApellido() + ", Dni= " + super.getDni()
+	    + ",Estado_Civil= " + super.getEstadoCivil()+", Año_Ingreso= " + getAnioIngreso() + ", Numero_Despacho= " + getNroDespacho();
+	}
+
 	public Integer getAnioIngreso() {
 		return anioIngreso;
 	}
@@ -27,14 +32,13 @@ public class Empleado extends Persona {
 		this.anioIngreso = anioIngreso;
 	}
 
-	public Integer getNro_despacho() {
-		return nro_despacho;
+	public Integer getNroDespacho() {
+		return nroDespacho;
 	}
 
-	public void setNro_despacho(Integer nro_despacho) {
-		this.nro_despacho = nro_despacho;
+	public void setNroDespacho(Integer nroDespacho) {
+		this.nroDespacho= nroDespacho;
 	}
-	
 	
 	
 	
